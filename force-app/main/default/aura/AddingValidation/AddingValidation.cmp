@@ -1,0 +1,75 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="ContactListController" access="global">
+
+<aura:handler name="init" action="{!c.getContactsList}" value="{!this}" />
+
+<aura:attribute name="contactList" type="List" />
+
+<aura:attribute name="contact" type="Contact"
+    default="{
+        'SObjectType': 'Contact',
+        'FirstName': '',
+        'LastName': '',
+        'Email': '',
+        'Phone': ''
+    }">            
+    </aura:attribute>
+
+    <aura:method name="validateContact" action="{!c.validateContact}" />
+    <lightning:card title="Contacts">
+        <p class="slds-p-horizontal_small">
+            <div aura:id="recordViewForm">
+                <aura:iteration items="{!v.contactList}" var="contact">
+                    <lightning:recordViewForm recordId="{!contact.Id}" objectApiName="Contact">
+                        <div class="slds-box slds-theme_default">
+                            <lightning:input type="checkbox" value="{!contact.Id}" label="Mark for Deletion" aura:id="deleteContact" />
+                            <br />
+                            <lightning:outputField fieldName="FirstName" />
+                            <lightning:outputField fieldName="LastName" />
+                            <lightning:outputField fieldName="Email" />
+                            <lightning:outputField fieldName="Phone" />
+                        </div>
+                    </lightning:recordViewForm>
+                    <br />
+                </aura:iteration>
+            </div>
+            <div aura:id="recordEditForm" class="formHide">
+                <aura:iteration items="{!v.contactList}" var="contact">
+                    <div class="slds-box slds-theme_default">
+                        <lightning:input label = 'FirstName' value="{!contact.FirstName}" />
+                        <lightning:input  label = 'LastName' aura:id="fieldToValidate" value="{!contact.LastName}" messageWhenValueMissing="Contact's Last Name is Mandatory" required="true"/>
+                        <lightning:input label = 'Email' type="email" value="{!contact.Email}" />
+                        <lightning:input label = 'Phone' aura:id="fieldToValidate" messageWhenPatternMismatch="Please enter the number in this pattern - (XXX) XXX-XXXX" type="tel" value="{!contact.Phone}" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" />
+                    </div>
+                    <br />
+                </aura:iteration>
+            </div>
+        </p>
+        <aura:set attribute="actions">
+            <lightning:button name="contactModal" label="New Contact" onclick="{!c.openModal}" />
+            <lightning:button variant="destructive" label="Delete" onclick="{!c.deleteContacts}" />
+            <lightning:button label="New" onclick="{!c.newContact}" />
+            <lightning:button variant="brand" label="Edit" name="edit" onclick="{!c.editContacts}" />
+        </aura:set>
+    </lightning:card>
+    <div>
+        <section aura:id="contactModal" role="dialog" tabindex="-1" aria-labelledby="contactModalHeading" aria-modal="true" aria-describedby="contactModalBody" class="slds-modal">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon class="slds-modal__close" alternativeText="Close" iconName="utility:close" onclick="{!c.closeModal}" variant="bare-inverse" size="large"></lightning:buttonIcon>
+                    <h2 id="contactModalHeading" class="slds-text-heading_medium slds-hyphenate">New Contact</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="contactModalBody">
+                    <lightning:input aura:id="formFieldToValidate" label="First Name" messageWhenValueMissing="Contact's First Name is Mandatory" required="true" value="{!v.contact.FirstName}" />
+                    <lightning:input aura:id="formFieldToValidate" label="Last Name" messageWhenValueMissing="Contacts's Last Name is Mandatory" required="true" value="{!v.contact.LastName}" />
+                    <lightning:input aura:id="formFieldToValidate" label="Email" name="emailField" value="{!v.contact.Email}" />
+                    <lightning:input label="Phone" value="{!v.contact.Phone}" />
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button onclick="{!c.closeModal}" variant="neutral">Cancel</lightning:button>
+                    <lightning:button onclick="{!c.createContact}" variant="brand" >Save</lightning:button>
+                </footer>
+            </div>
+        </section>
+        <div aura:id="contactModalBackdrop" class="slds-backdrop"></div>
+    </div>
+</aura:component>

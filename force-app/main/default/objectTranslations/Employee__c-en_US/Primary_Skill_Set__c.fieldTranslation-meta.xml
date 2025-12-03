@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Primary Skill Set --></label>
+    <name>Primary_Skill_Set__c</name>
+    <picklistValues>
+        <masterLabel>Java</masterLabel>
+        <translation><!-- Java --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salesforce</masterLabel>
+        <translation><!-- Salesforce --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>python</masterLabel>
+        <translation><!-- python --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

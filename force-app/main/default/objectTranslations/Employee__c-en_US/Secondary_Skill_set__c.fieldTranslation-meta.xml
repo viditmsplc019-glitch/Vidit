@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Secondary Skill set --></label>
+    <name>Secondary_Skill_set__c</name>
+    <picklistValues>
+        <masterLabel>Advanced Java</masterLabel>
+        <translation><!-- Advanced Java --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Advanced Python</masterLabel>
+        <translation><!-- Advanced Python --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Core Java</masterLabel>
+        <translation><!-- Core Java --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salesforce CPQ</masterLabel>
+        <translation><!-- Salesforce CPQ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Salesforce Lwc</masterLabel>
+        <translation><!-- Salesforce Lwc --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

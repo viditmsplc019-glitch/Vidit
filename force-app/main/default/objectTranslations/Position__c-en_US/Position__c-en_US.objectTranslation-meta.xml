@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Position</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Positions</value>
+    </caseValues>
+    <layouts>
+        <layout>IT Position Layout</layout>
+        <sections>
+            <label><!-- Compensation --></label>
+            <section>Compensation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Language Required --></label>
+            <section>Language Required</section>
+        </sections>
+        <sections>
+            <label><!-- Pay --></label>
+            <section>Pay</section>
+        </sections>
+        <sections>
+            <label><!-- Qualification --></label>
+            <section>Qualification</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Position Layout</layout>
+        <sections>
+            <label><!-- Compensation --></label>
+            <section>Compensation</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Language Required --></label>
+            <section>Language Required</section>
+        </sections>
+        <sections>
+            <label><!-- Pay --></label>
+            <section>Pay</section>
+        </sections>
+        <sections>
+            <label><!-- Qualification --></label>
+            <section>Qualification</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- IT Position --></label>
+        <name>IT_Position</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Non IT Position --></label>
+        <name>Non_IT_Position</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Close Date must be specified when Status is set to &apos;Closed.&apos; --></errorMessage>
+        <name>Close_Date_Rule</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Min pay cannot exceed Max pay --></errorMessage>
+        <name>Min_pay_rule</name>
+    </validationRules>
+    <workflowTasks>
+        <name>Approve_by_3</name>
+        <subject><!-- Approve by 3 --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Aprooved_by_sachin</name>
+        <subject><!-- Aprooved by sachin --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <name>Aproved_by_Vidit_Gupta</name>
+        <subject><!-- Aproved by Vidit Gupta --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

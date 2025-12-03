@@ -1,0 +1,16 @@
+<apex:page controller="MySecondController" tabStyle="Opportunity">
+<apex:form >
+<apex:pageBlock title="Opportunity Detail">
+<apex:pageBlockButtons >
+<apex:commandButton value="Save The Opportunity" action="{!saveMethod}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Opportunity Information" columns="2"
+collapsible="false">
+<apex:inputField value="{!Opportunity .Name}"/>
+<apex:inputField value="{!Opportunity .DeliveryInstallationStatus__c}"/>
+<apex:inputField value="{!Opportunity .TrackingNumber__c}"/>
+<apex:inputField value="{!Opportunity .CloseDate}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

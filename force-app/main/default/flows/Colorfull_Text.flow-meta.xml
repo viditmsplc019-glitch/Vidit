@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Set_Oppourtnity</name>
+        <label>Set Opportnity</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Deal_Analysis__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>forT_DealAnalysisColorText</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>forT_DealAnalysisColorText</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!$Record.StageName}) =&apos;Closed Lost&apos;, (&apos;&lt;html&gt;&lt;body&gt;&lt;div style=&quot;color: red;&quot;&gt;&apos; &amp; SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!$Record.Deal_Analysis__c}, &apos;&lt;div style=&quot;color: green;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;div style=&quot;color: red;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;/div&gt;&apos;, &apos;&apos;) &amp; &apos;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&apos;),
+IF(TEXT({!$Record.StageName}) =&apos;Closed Won&apos;, (&apos;&lt;html&gt;&lt;body&gt;&lt;div style=&quot;color: green;&quot;&gt;&apos; &amp; SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!$Record.Deal_Analysis__c}, &apos;&lt;div style=&quot;color: green;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;div style=&quot;color: red;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;/div&gt;&apos;, &apos;&apos;)&amp; &apos;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&apos;),
+IF({!$Record.IsClosed}=False, (&apos;&lt;html&gt;&lt;body&gt;&lt;div style=&quot;color: green;&quot;&gt;&apos; &amp; SUBSTITUTE(SUBSTITUTE(SUBSTITUTE({!$Record.Deal_Analysis__c}, &apos;&lt;div style=&quot;color: green;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;div style=&quot;color: red;&quot;&gt;&apos;, &apos;&apos;), &apos;&lt;/div&gt;&apos;, &apos;&apos;)&amp; &apos;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&apos;),
+&quot;&quot;
+)))</expression>
+    </formulas>
+    <interviewLabel>Colorfull Text {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Colorfull Text</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Set_Oppourtnity</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

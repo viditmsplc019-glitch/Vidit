@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" sidebar="false" showHeader="true">
+<apex:form >
+<apex:pageBlock title="Opportunity Detail">
+<apex:pageBlockButtons >
+<apex:commandButton value="Save The Opportunity" action="{!Save}"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Opportunity Information 1" columns="2"
+collapsible="false">
+<apex:inputField value="{!Opportunity.Name}"/>
+<apex:inputField value="{!Opportunity.Active__c}" required="true"/>
+<apex:inputField value="{!Opportunity.DeliveryInstallationStatus__c}"/>
+<apex:inputField value="{!Opportunity.TrackingNumber__c}"/>
+<apex:inputField value="{!Opportunity.CloseDate}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Opportunity Information 2" columns="2"
+collapsible="true">
+<apex:inputField value="{!Opportunity.Description}"/>
+<apex:inputField value="{!Opportunity.LeadSource}"/>
+<apex:inputField value="{!Opportunity.NextStep}"/>
+<apex:inputField value="{!Opportunity.Type}"/>
+<apex:inputField value="{!Opportunity.StageName}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

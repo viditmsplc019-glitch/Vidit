@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Publisher Component">
+        <div class="slds-p-around_medium">
+            <lightning-input
+                label="Enter Message"
+                value={messageText}
+                onchange={handleMessageChange}>
+            </lightning-input>
+            <lightning-button
+                label="Publish Message"
+                variant="brand"
+                onclick={publishMessage}
+                class="slds-m-top_small">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

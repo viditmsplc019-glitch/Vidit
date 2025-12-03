@@ -1,0 +1,39 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" controller="ContactListController" access="global" >
+    <aura:handler name="init" action="{!c.getContactsList}" value="{!this}" />
+    <aura:attribute name="contactList" type="List" />
+	<lightning:card title="Contacts">
+        <p class="slds-p-horizontal_small">
+            <div aura:id="recordViewForm">
+                <aura:iteration items="{!v.contactList}" var="contact">
+                    <lightning:recordViewForm recordId="{!contact.Id}" objectApiName="Contact">
+                        <div class="slds-box slds-theme_default">
+	                    <lightning:input type="checkbox" value="{!contact.Id}" label="Mark for Deletion" aura:id="deleteContact" />
+                            <br />
+                            <lightning:outputField fieldName="FirstName" />
+                            <lightning:outputField fieldName="LastName" />
+                            <lightning:outputField fieldName="Email" />
+                            <lightning:outputField fieldName="Phone" />
+                        </div>
+                    </lightning:recordViewForm>
+                    <br />
+                </aura:iteration>
+            </div>
+            <div aura:id="recordEditForm" class="formHide">
+                <aura:iteration items="{!v.contactList}" var="contact">
+                    <div class="slds-box slds-theme_default">
+                        <lightning:input label = 'FirstName' value="{!contact.FirstName}" />
+                        <lightning:input label = 'LastName' value="{!contact.LastName}" />
+                        <lightning:input label = 'email' type="email" value="{!contact.Email}" />
+                        <lightning:input label = 'Phone' type="tel" value="{!contact.Phone}" pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" />
+                    </div>
+                    <br />
+                </aura:iteration>
+            </div>
+        </p>
+        <aura:set attribute="actions">
+            <lightning:button variant="destructive" label="Delete" onclick="{!c.deleteContacts}" />
+            <lightning:button label="New" onclick="{!c.newContact}" />
+            <lightning:button variant="brand" label="Edit" name="edit" onclick="{!c.editContacts}" />
+        </aura:set>
+    </lightning:card>
+</aura:component>

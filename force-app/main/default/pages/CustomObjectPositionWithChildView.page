@@ -1,0 +1,18 @@
+<apex:page standardController="Position__c">
+<b>Hello World {!$User.FirstName}</b><br/><br/>
+<apex:variable var="p" value="{!Position__c}"/>
+<apex:form >
+<apex:pageBlock title="Quick Edit">
+<apex:pageBlockSection columns="3">
+<apex:inputField value="{!p.name}"/>
+<apex:inputField value="{!p.Status__c}"/>
+<apex:commandButton action="{!save}" value="Update"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+<apex:detail relatedList="false" />
+<apex:relatedList list="Job_Applications__r" />
+<apex:repeat value="{!Position__c.job_applications__r}" var="ja">
+<apex:outputText value="{!ja.name}"></apex:outputText>
+</apex:repeat>
+</apex:page>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Omni Queue</name>
+    <queueMembers>
+        <users>
+            <user>viditmsplc019400@agentforce.com</user>
+        </users>
+    </queueMembers>
+    <queueRoutingConfig>Case_Routing_Cofiguration</queueRoutingConfig>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+</Queue>

@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Student Records Search">
+        <div class="slds-p-around_medium">
+            
+            <div class="slds-grid slds-wrap slds-grid_align-end slds-gutters">
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_8-of-12 slds-large-size_10-of-12">
+                    <lightning-input 
+                        type="number" 
+                        label="Enter Number Of Active Student" 
+                        value={numberOfActiveStudent} 
+                        onchange={handleInputChange} 
+                        min="0"
+                        placeholder="Enter number">
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_4-of-12 slds-large-size_2-of-12 slds-align-bottom" >
+                    <lightning-button 
+                        label="Search" 
+                        variant="brand" 
+                        onclick={handleSearch}>
+                    </lightning-button>
+                </div>
+
+            </div>
+            <template if:true={errorMessage}>
+                <div class="slds-text-color_error slds-m-top_small">{errorMessage}</div>
+            </template>
+
+            <template if:true={students.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={students}
+                    columns={columns}
+                    hide-checkbox-column
+                    class="slds-m-top_medium">
+                </lightning-datatable>
+            </template>
+
+            <template if={showNoRecords}>
+                <p class="slds-m-top_medium">No records found.</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

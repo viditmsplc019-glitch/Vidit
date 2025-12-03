@@ -1,0 +1,25 @@
+<template>
+    <lightning-combobox
+        name="account"
+        label="Select Account"
+        value={selectedAccountId}
+        options={accountOptions}
+        onchange={handleAccountChange}>
+    </lightning-combobox>
+
+    <template if:true={contacts.length}>
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}
+            onrowselection={handleRowSelection}>
+        </lightning-datatable>
+
+        <lightning-button
+            label="Modify Selected"
+            variant="brand"
+            onclick={handleModify}
+            class="slds-m-top_medium">
+        </lightning-button>
+    </template>
+</template>

@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Create Record : OpportunityproductAmountcalculation">
+        <div class="slds-p-around_medium">
+
+            <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                <div class="slds-col slds-size_3-of-4">
+                    <lightning-combobox
+                        name="product"
+                        label="Product"
+                        placeholder="-- Please Select Product --"
+                        value={selectedProductId}
+                        options={productOptions}
+                        onchange={handleProductChange}>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-4"></div>
+            </div>
+
+            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                <div class="slds-col slds-size_1-of-1 slds-text-align_right">
+                    <lightning-button label="New" variant="brand" onclick={handleNewClick}></lightning-button>
+                </div>
+            </div>
+
+            <template if:true={showNewForm}>
+                <div class="slds-box slds-theme_default slds-m-bottom_medium">
+                    <lightning-input label="Name" name="Name" value={newOpac.Name} onchange={handleInputChange}></lightning-input>
+
+                    <lightning-input label="Min" name="Min__c" type="number" value={newOpac.Min__c} onchange={handleInputChange}></lightning-input>
+
+                    <lightning-input label="Max" name="Max__c" type="number" value={newOpac.Max__c} onchange={handleInputChange}></lightning-input>
+
+                    <lightning-input label="Price" name="Price__c" type="number" step="0.01" value={newOpac.Price__c} onchange={handleInputChange}></lightning-input>
+
+                    <div class="slds-m-top_medium">
+                        <lightning-button label="Save OPAC" variant="brand" onclick={handleSave}></lightning-button>
+                        <lightning-button label="Cancel" variant="neutral" onclick={handleCancel} class="slds-m-left_small"></lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <lightning-datatable
+                key-field="Id"
+                data={opacs.data}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+
+        </div>
+    </lightning-card>
+</template>

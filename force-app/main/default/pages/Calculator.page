@@ -1,0 +1,19 @@
+<apex:page controller="Calculate">
+<apex:form >
+
+<apex:outputLabel >enter first number </apex:outputLabel>
+<apex:inputText value="{!num1}" />
+
+<apex:outputLabel >enter second number </apex:outputLabel>
+<apex:inputText value="{!num2}" />
+<br/>
+<apex:outputLabel id="two">Result : {!result} </apex:outputLabel>
+<br/>
+<apex:commandButton value="Add"  reRender="two" action="{!add}" />
+<apex:commandButton value="Sub"  reRender="two" action="{!sub}" />
+<apex:commandButton value="Div"  reRender="two" action="{!div}" />
+<apex:commandButton value="Mul"  reRender="two" action="{!mul}" />
+
+</apex:form>
+
+</apex:page>

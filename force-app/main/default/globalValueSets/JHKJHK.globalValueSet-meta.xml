@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>FGHFG</fullName>
+        <default>true</default>
+        <label>FGHFG</label>
+    </customValue>
+    <customValue>
+        <fullName>JDJJDJ</fullName>
+        <default>false</default>
+        <label>JDJJDJ</label>
+    </customValue>
+    <customValue>
+        <fullName>JJDJ</fullName>
+        <default>false</default>
+        <label>JJDJ</label>
+    </customValue>
+    <customValue>
+        <fullName>DJND</fullName>
+        <default>false</default>
+        <label>DJND</label>
+    </customValue>
+    <customValue>
+        <fullName>DDNKD</fullName>
+        <default>false</default>
+        <label>DDNKD</label>
+    </customValue>
+    <description>KJLKJ</description>
+    <masterLabel>JHKJHK</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

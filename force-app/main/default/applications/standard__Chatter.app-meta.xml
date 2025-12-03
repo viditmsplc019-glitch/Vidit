@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-UserProfile</tabs>
+    <tabs>standard-OtherUserProfile</tabs>
+    <tabs>standard-CollaborationGroup</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>Candidate__c</tabs>
+    <tabs>Job_Application__c</tabs>
+    <tabs>Vidit1__c</tabs>
+    <tabs>xyz__c</tabs>
+    <tabs>Employment_Website__c</tabs>
+    <tabs>Job_Posting__c</tabs>
+    <tabs>Employee__c</tabs>
+    <tabs>Company__c</tabs>
+    <tabs>Department__c</tabs>
+    <tabs>Top_X_Designation__c</tabs>
+    <tabs>Book__c</tabs>
+    <tabs>Customer_Project__c</tabs>
+    <tabs>Contact_Relationship__c</tabs>
+    <tabs>Customer__c</tabs>
+    <tabs>Skills__c</tabs>
+    <tabs>Candidate_skill__c</tabs>
+    <tabs>School__c</tabs>
+    <tabs>Class__c</tabs>
+    <tabs>opportunityproductAmountcalculation__c</tabs>
+    <tabs>CustomObj__c</tabs>
+</CustomApplication>

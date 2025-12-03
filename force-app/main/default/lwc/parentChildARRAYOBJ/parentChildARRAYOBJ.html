@@ -1,0 +1,23 @@
+<template>
+    <div class="margin-bottom-2rem">
+        <lightning-card 
+            title="Parent to child data communication using Array/Objects" 
+            icon-name="custom:custom14"
+        >
+            <div class="slds-grid slds-wrap slds-m-around_medium">
+                <template for:each={userDetails} for:item="user">
+                    <div 
+                        key={user.name} 
+                        class="slds-col slds-size_1-of-2 slds-box slds-theme_default slds-m-around_small"
+                    >
+                        <img src={user.imageUrl} alt={user.name} style="width:100%">
+                        <h3>{user.name}</h3>
+                        <p>{user.title}</p>
+                        <p>{user.company}</p>
+                        <lightning-button label={user.buttontext} variant="brand"></lightning-button>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

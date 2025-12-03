@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Secondary_Skill_set__c</fullName>
+    <label>Secondary Skill set</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Core Java</fullName>
+                <default>false</default>
+                <label>Core Java</label>
+            </value>
+            <value>
+                <fullName>Advanced Java</fullName>
+                <default>false</default>
+                <label>Advanced Java</label>
+            </value>
+            <value>
+                <fullName>Advanced Python</fullName>
+                <default>false</default>
+                <label>Advanced Python</label>
+            </value>
+            <value>
+                <fullName>Salesforce Lwc</fullName>
+                <default>false</default>
+                <label>Salesforce Lwc</label>
+            </value>
+            <value>
+                <fullName>Salesforce CPQ</fullName>
+                <default>false</default>
+                <label>Salesforce CPQ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="Accounts" onactive={handleTabActive}>
+            <lightning-combobox
+                name="account"
+                label="Select Account"
+                value={selectedAccountId}
+                options={accountOptions}
+                onchange={handleAccountChange}>
+            </lightning-combobox>
+
+            <template if:true={contacts.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contacts}
+                    columns={columns}
+                    onrowselection={handleRowSelection}>
+                </lightning-datatable>
+
+                <lightning-button
+                    label="Modify Selected"
+                    variant="brand"
+                    onclick={handleModify}
+                    class="slds-m-top_medium">
+                </lightning-button>
+            </template>
+        </lightning-tab>
+
+        <template for:each={contactTabs} for:item="tab">
+            <lightning-tab label={tab.label} key={tab.id}>
+                <lightning-record-form
+                    record-id={tab.id}
+                    object-api-name="Contact"
+                    layout-type="Full"
+                    mode="edit">
+                </lightning-record-form>
+            </lightning-tab>
+        </template>
+    </lightning-tabset>
+</template>

@@ -1,0 +1,64 @@
+<template>
+        <div class="slds-box slds-theme_default">
+<lightning-layout>
+        <lightning-layout-item size="6" padding="around-medium">
+<lightning-combobox
+    label="Select School"
+    options={schoolOptions}
+    value={selectedSchool}
+    onchange={handleSchoolChange}>
+</lightning-combobox>
+    </lightning-layout-item>   
+        <lightning-layout-item size="6" padding="around-medium">
+<lightning-combobox
+    label="Select Class"
+    options={classOptions}
+    value={selectedClass}
+    onchange={handleClassChange}>
+</lightning-combobox>
+    </lightning-layout-item>
+</lightning-layout>
+<div class="slds-m-bottom_medium slds-text-align_right">
+<lightning-button label="New" onclick={handleNew}></lightning-button>
+<lightning-button label="Delete" onclick={handleDelete} variant="destructive"  class="slds-m-left_small"></lightning-button>
+</div>
+
+<lightning-datatable
+    key-field="Id"
+    data={studentData}
+    columns={columns}
+    onrowaction={handleRowAction}
+    onrowselection={handleRowSelection}
+    selected-rows={selectedStudentIds}>
+</lightning-datatable>
+
+<template if:true={isModalOpen}>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 class="slds-modal__title">{modalTitle}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <lightning-record-edit-form
+                    object-api-name="Student__c"
+                    record-id={studentRecord.Id}
+                    onsuccess={handleSuccess}
+                    onerror={handleError}>
+
+                    <lightning-input-field field-name="Name"></lightning-input-field>
+                    <lightning-input-field field-name="Age__c"></lightning-input-field>
+                    <lightning-input-field field-name="Email__c"></lightning-input-field>
+                    <lightning-input-field field-name="Class__c" value={selectedClass}></lightning-input-field>
+
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                        <lightning-button variant="brand" label="Save" type="submit"></lightning-button>
+                    </footer>
+                </lightning-record-edit-form>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+        </div>
+</template>

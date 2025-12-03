@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Apex Method Chain Tester">
+
+        <div class="slds-p-around_medium">
+
+            <!-- Fail Toggles -->
+            <lightning-input type="toggle"
+                             name="failA"
+                             checked={failA}
+                             label="Force Method A Failure"
+                             onchange={handleToggle}>
+            </lightning-input>
+
+            <lightning-input type="toggle"
+                             name="failB"
+                             checked={failB}
+                             label="Force Method B Failure"
+                             onchange={handleToggle}>
+            </lightning-input>
+
+            <lightning-input type="toggle"
+                             name="failC"
+                             checked={failC}
+                             label="Force Method C Failure"
+                             onchange={handleToggle}>
+            </lightning-input>
+
+            <!-- Run Button -->
+            <lightning-button label="Run Test"
+                              variant="brand"
+                              class="slds-m-top_medium"
+                              onclick={runMethods}>
+            </lightning-button>
+
+            <!-- Results -->
+            <template if:true={loading}>
+                <p class="slds-m-top_small">⏳ Running...</p>
+            </template>
+
+            <template if:true={aResult}>
+                <p class="slds-m-top_small">✔️ A Result: {aResult}</p>
+            </template>
+
+            <template if:true={bResult}>
+                <p class="slds-m-top_small">✔️ B Result: {bResult}</p>
+            </template>
+
+            <template if:true={cResult}>
+                <p class="slds-m-top_small">✔️ C Result: {cResult}</p>
+            </template>
+
+            <template if:true={errorMsg}>
+                <p class="slds-text-color_error slds-m-top_small">{errorMsg}</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

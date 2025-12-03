@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dfg__c</fullName>
+    <label>dfg</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>o</fullName>
+                <default>false</default>
+                <label>o</label>
+            </value>
+            <value>
+                <fullName>u</fullName>
+                <default>false</default>
+                <label>u</label>
+            </value>
+            <value>
+                <fullName>l</fullName>
+                <default>false</default>
+                <label>l</label>
+            </value>
+            <value>
+                <fullName>n</fullName>
+                <default>false</default>
+                <label>n</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<apex:page sidebar="false" standardController="Account">
+<apex:pageBlock title="Account detail">
+<apex:pageBlockSection >
+            First Name: {! Account.Name }<br/>
+            Last Name: {! Account.Annualrevenue }<br/>
+            Email: {! Account.owner.email }<br/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Item_type__c</name>
+    <picklistValues>
+        <masterLabel>Contract Flow Down/ Handoff</masterLabel>
+        <translation><!-- Contract Flow Down/ Handoff --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract Flow High/Handoff</masterLabel>
+        <translation><!-- Contract Flow High/Handoff --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
