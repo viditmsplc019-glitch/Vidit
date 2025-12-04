@@ -5,7 +5,7 @@ public with sharing class AccountContactController {
         return [SELECT Id, Name FROM Account LIMIT 100];
     }
 
-   
+
     
     @AuraEnabled(cacheable=true)
     public static List<Contact> getContactsByAccount(Id accountId) {
